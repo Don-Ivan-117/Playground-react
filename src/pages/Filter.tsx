@@ -51,45 +51,45 @@ export default function Filter() {
     return (
         //usamos pt-20 en lugar de items-center para una distancia especifica desde la parte superior
         <div className="min-h-screen bg-gray-100 flex justify-center pt-20 p-4">
-        {/* Usamos h-fit para que el contenedor no se estire innecesariamente */}
-        <div className="w-full max-w-md bg-white p-6 rounded-2xl shadow-lg h-fit">
-            <h1 className="text-3xl font-bold text-center text-yellow-500 mb-6">Poke Search (3G)</h1>
+            {/* Usamos h-fit para que el contenedor no se estire innecesariamente */}
+            <div className="w-full max-w-md bg-white p-6 rounded-2xl shadow-lg h-fit">
+                <h1 className="text-3xl font-bold text-center text-yellow-500 mb-6">Poke Search (3G)</h1>
 
-            <div className="relative mb-4">
-            <input 
-                id='pokemon'
-                name='pokemon'
-                type="text" 
-                className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-yellow-400 focus:outline-none transition-all"
-                placeholder="Busca tu Pokémon (ej. Kyogre)..."
-                value={searchPoke}
-                onChange={(e) => setSearchPoke(e.target.value)}
-            />
-            </div>
+                <div className="relative mb-4">
+                <input 
+                    id='pokemon'
+                    name='pokemon'
+                    type="text" 
+                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-yellow-400 focus:outline-none transition-all"
+                    placeholder="Busca tu Pokémon (ej. Kyogre)..."
+                    value={searchPoke}
+                    onChange={(e) => setSearchPoke(e.target.value)}
+                />
+                </div>
 
-            {/* Ocultamos el scroll por defecto */}
-            <div className="overflow-hidden">
-                {/* Establecemos una altura maxima de 320px para el contenedor de resultados y agremos un scroll cuando la cantidad de resultados supere ese limite de altura*/}
-                <ul className="max-h-80 overflow-y-auto">
-                    {loading && <p className="text-center text-gray-400">Cargando Pokédex...</p>}
-                    
-                    {isSearching && filteredPokemons.length > 0 ? (
-                        filteredPokemons.map((pokemon) => (
-                            <li 
-                            key={pokemon.name} 
-                            className="flex items-center px-4 py-3 hover:bg-yellow-50 rounded-lg cursor-pointer transition-colors border-b border-gray-50 last:border-none group"
-                            >
-                            <span className="capitalize text-gray-700 group-hover:text-yellow-600 font-medium">
-                                {pokemon.name}
-                            </span>
-                            </li>
-                        ))
-                    ) : isSearching && !loading ? (
-                        <p className="text-center text-gray-400 py-4">No se encontraron resultados</p>
-                    ) : null}
-                </ul>
+                {/* Ocultamos el scroll por defecto */}
+                <div className="overflow-hidden">
+                    {/* Establecemos una altura maxima de 320px para el contenedor de resultados y agremos un scroll cuando la cantidad de resultados supere ese limite de altura*/}
+                    <ul className="max-h-80 overflow-y-auto">
+                        {loading && <p className="text-center text-gray-400">Cargando Pokédex...</p>}
+                        
+                        {isSearching && filteredPokemons.length > 0 ? (
+                            filteredPokemons.map((pokemon) => (
+                                <li 
+                                key={pokemon.name} 
+                                className="flex items-center px-4 py-3 hover:bg-yellow-50 rounded-lg cursor-pointer transition-colors border-b border-gray-50 last:border-none group"
+                                >
+                                <span className="capitalize text-gray-700 group-hover:text-yellow-600 font-medium">
+                                    {pokemon.name}
+                                </span>
+                                </li>
+                            ))
+                        ) : isSearching && !loading ? (
+                            <p className="text-center text-gray-400 py-4">No se encontraron resultados</p>
+                        ) : null}
+                    </ul>
+                </div>
             </div>
-        </div>
         </div>
     );
 }
