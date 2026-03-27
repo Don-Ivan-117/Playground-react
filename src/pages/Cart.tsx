@@ -23,7 +23,7 @@ export default function Cart() {
 
     const isEmpty = useMemo(() => cart.length === 0 , [cart]);
     const MAX_ITEMS = 5;
-    const MIN_ITEMS = 5;
+    const MIN_ITEMS = 1;
 
     const addItem = (item: GuitarsType) => {
         
@@ -63,9 +63,9 @@ export default function Cart() {
                             isEmpty? (
                                 <p className='text-center text-gray-500 py-4'>The Cart is empty</p>
                             ) : (
-                                <div className='overflow-x-auto'>
-                                    <table className='w-full text-left border-collapse'>
-                                        <thead className='fl'>
+                                <div className=''>
+                                    <table className=''>
+                                        <thead className=''>
                                             <tr>Imagen</tr>
                                             <tr>Nombre</tr>
                                             <tr>Precio</tr>
@@ -75,7 +75,7 @@ export default function Cart() {
                                         <tbody className='max-w-dvw'>
                                             {
                                                 cart.map(guitar => (
-                                                    <tr key={guitar.id} className='flex space-x-12 border border-t-gray-500 last-of-type:border-none'>
+                                                    <tr key={guitar.id} className=' '>
                                                         <td>
                                                             <img className='w-8 ' src={`/img/${guitar.image}.jpg`} alt="guitar img" />
                                                         </td>
