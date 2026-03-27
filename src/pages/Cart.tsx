@@ -81,7 +81,7 @@ export default function Cart() {
                                                         </td>
                                                         <td>{guitar.name}</td>
                                                         <td>{guitar.price}</td>
-                                                        <td>{guitar.quantity}</td>
+                                                        <td>{guitar.quantity}</td>  
                                                     </tr>
                                                 ))
                                             }
